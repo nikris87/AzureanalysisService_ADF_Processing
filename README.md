@@ -21,7 +21,7 @@ There is already sample avilable for [Azure analysis service Full Refresh using 
 ![App reg](https://github.com/nikris87/AzureanalysisService_ADF_Processing/blob/master/Appreg.png)
 
 ##### Enter a name for your App registration, select Web App / API for application type and enter a dummy Sign-on URL.
-![App reg Create ]https://github.com/nikris87/AzureanalysisService_ADF_Processing/blob/master/Appregcreate.PNG
+![App reg Create](https://github.com/nikris87/AzureanalysisService_ADF_Processing/blob/master/Appregcreate.PNG)
 
 ##### In the Settings section for your App registration, click Required permissions set up the following permission as below.
 

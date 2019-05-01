@@ -6,5 +6,5 @@ There is already sample avilable to [Full Refresh of Azure analysis service usin
 
 But, some customer dont want to process full AAS and  wants to process only few tables in Azure analysis service based on the config file . this example will cover that part.
 
-##Prerequisite :
+## Prerequisite :
 

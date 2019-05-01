@@ -58,7 +58,7 @@ app:app guid@tenant guid
 
 ![http request trigger](https://github.com/nikris87/AzureanalysisService_ADF_Processing/blob/master/CommonTrigger.PNG)
 
-Expand Http request recieved trigger and add folling json :
+Expand Http request recieved trigger and add following json :
 
 {
     "properties": {

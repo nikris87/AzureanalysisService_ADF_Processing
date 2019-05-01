@@ -15,10 +15,39 @@ There is already sample avilable for [Azure analysis service Full Refresh using 
 
 
 ## Abstract
+### Step 1 : Create App Registration in Azure active directory:
 
-Follow pre requisite guidelines to Create app Registration in this [link](https://jorgklein.com/2018/01/30/process-azure-analysis-services-objects-from-azure-data-factory-v2-using-a-logic-app/)
+##### Navigate to the Azure Active Directory page. On the Overview page, click “App registrations” followed by “+ New application registration”.
+![App reg](https://github.com/nikris87/AzureanalysisService_ADF_Processing/blob/master/Appreg.png)
 
-### Step 1. Create logic app
+##### Enter a name for your App registration, select Web App / API for application type and enter a dummy Sign-on URL.
+![App reg Create ]https://github.com/nikris87/AzureanalysisService_ADF_Processing/blob/master/Appregcreate.PNG
+
+##### In the Settings section for your App registration, click Required permissions set up the following permission as below.
+
+![permisiion 1](https://github.com/nikris87/AzureanalysisService_ADF_Processing/blob/master/appregrequiredpermission1.PNG)
+
+![permisiion 2](https://github.com/nikris87/AzureanalysisService_ADF_Processing/blob/master/appregrequiredpermission2.PNG)
+
+![permisiion 3](https://github.com/nikris87/AzureanalysisService_ADF_Processing/blob/master/appregrequiredpermission3.PNG)
+
+##### In the Settings section for your App registration,  click Keys.Choose the key description , duration and save. make a note of key 
+and you need this in step 2
+![Key](https://github.com/nikris87/AzureanalysisService_ADF_Processing/blob/master/AppregKey.PNG)
+
+##### Take a note of applicatioon id :
+![appid](https://github.com/nikris87/AzureanalysisService_ADF_Processing/blob/master/AppregApplicationId.PNG)
+
+##### In step 2 you need Tenan id (Directory id), Navigate to the Azure portal, go to the Azure Active Directory page and click Properties. Now take note of the “Directory ID”.:
+
+![Tenatid](https://github.com/nikris87/AzureanalysisService_ADF_Processing/blob/master/AppregTenantid.PNG)
+
+##### Grant App Registration permissions to process your Azure Analysis Services model.
+Connect to Azure analysis service using SSMS.To process models using the API, the App Registration needs Server administrator permissions.Open the Analysis Services Server Properties, click Security and click Add. You can add the App Registration as a manual entry using the Application ID (app guid) and the Azure Active Directory ID (tenant guid) that you saved before. Use the following syntax:  app:<app guid>@<tenant guid>
+ 
+![AAS permission](https://github.com/nikris87/AzureanalysisService_ADF_Processing/blob/master/AAS.PNG)
+
+### Step 2. Create logic app
 
 ##### Craete new logic app from new resource in Azure portal. and then click edit
 
@@ -70,7 +99,7 @@ Expand Http request recieved trigger and add folling json :
 ##### Save the logic apps and open "When http request recieved" trigger and copy the post URL
 ![Copy post URI](https://github.com/nikris87/AzureanalysisService_ADF_Processing/blob/master/CopyURI.PNG)
 
-### Step 2. Create Config file and upload to Blob Storage .
+### Step 3: Create Config file and upload to Blob Storage .
 ##### In my case i added 4 tables which i want to process in my cube as in below format. "Schema" is header in the file. [Download sample file](https://github.com/nikris87/AzureanalysisService_ADF_Processing/blob/master/AASSchema.txt).
 
 schema
@@ -78,19 +107,19 @@ schema
 
 ##### Upload this file to Blob Storage.
 
-### Step 3. Create Azure data factory pipeline.
+### Step 4. Create Azure data factory pipeline.
 
 ##### In ADF v2 visual tool drag and drop Lookup and Web activity as below :
 
 ![Activity](https://github.com/nikris87/AzureanalysisService_ADF_Processing/blob/master/ADFactivity.PNG)
 
-##### Click on Look up activity ,under setting tab choose source data set as config file created in step 2.
+##### Click on Look up activity ,under setting tab choose source data set as config file created in step 3.
 
 ![Lookup](https://github.com/nikris87/AzureanalysisService_ADF_Processing/blob/master/LookupActivity.PNG)
 
 ##### Click on web activity and in setting configure belwo proerty :
 
-###### URI :Paste URI copied from Logic apps in Step 1 
+###### URI :Paste URI copied from Logic apps in Step 2 
 ###### Method : Choose method as Post
 ###### Header : add new header ,a dn provide Name : Content-Type , Value : application/json
 ###### Body   : Add below Json to Body and make sure use right Lookup activity name (In may example "getmetadata" and header of the file in my example file hesder "schema")

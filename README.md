@@ -11,7 +11,7 @@ There is already sample avilable for [Azure analysis service Full Refresh using 
 1. [Create Azure Subscription](https://azure.microsoft.com/en-us/free/search/?&OCID=AID719825_SEM_cZGgGOIg&lnkd=Google_Azure_Brand&gclid=Cj0KCQjwh6XmBRDRARIsAKNInDGJOdHj9r9XuFXljGG4D5YgWzmnKTIugex27I8fQtSDyaBjIOO3zSoaAiJJEALw_wcB)
 2. [Create Azure Analysis service](https://docs.microsoft.com/en-us/azure/analysis-services/analysis-services-create-server)
 3. [Create Azure data Factory V2](https://docs.microsoft.com/en-us/azure/data-factory/quickstart-create-data-factory-portal)
-4. Create Azure Logic Apps (https://docs.microsoft.com/en-us/azure/logic-apps/quickstart-create-first-logic-app-workflow)
+4. [Create Azure Logic Apps](https://docs.microsoft.com/en-us/azure/logic-apps/quickstart-create-first-logic-app-workflow)
 
 
 ## Abstract

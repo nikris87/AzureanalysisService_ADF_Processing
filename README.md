@@ -43,7 +43,8 @@ There is already sample avilable for [Azure analysis service Full Refresh using 
 ![Tenatid](https://github.com/nikris87/AzureanalysisService_ADF_Processing/blob/master/AppregTenantid.PNG)
 
 ##### Grant App Registration permissions to process your Azure Analysis Services model.
-Connect to Azure analysis service using SSMS.To process models using the API, the App Registration needs Server administrator permissions.Open the Analysis Services Server Properties, click Security and click Add. You can add the App Registration as a manual entry using the Application ID (app guid) and the Azure Active Directory ID (tenant guid) that you saved before. Use the following syntax:  app:<app guid>@<tenant guid>
+Connect to Azure analysis service using SSMS.To process models using the API, the App Registration needs Server administrator permissions.Open the Analysis Services Server Properties, click Security and click Add. You can add the App Registration as a manual entry using the Application ID (app guid) and the Azure Active Directory ID (tenant guid) that you saved before. Use the following syntax:  
+app:<app guid>@<tenant guid>
  
 ![AAS permission](https://github.com/nikris87/AzureanalysisService_ADF_Processing/blob/master/AAS.PNG)
 

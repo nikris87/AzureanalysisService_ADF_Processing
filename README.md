@@ -32,7 +32,7 @@ There is already sample avilable for [Azure analysis service Full Refresh using 
 ![permisiion 3](https://github.com/nikris87/AzureanalysisService_ADF_Processing/blob/master/appregrequiredpermission3.PNG)
 
 ##### In the Settings section for your App registration,  click Keys.Choose the key description , duration and save. make a note of key 
-and you need this in step 2
+##### and you need this in step 2
 ![Key](https://github.com/nikris87/AzureanalysisService_ADF_Processing/blob/master/AppregKey.PNG)
 
 ##### Take a note of applicatioon id :

@@ -2,7 +2,7 @@
 
 In this Artcile i will explain how to automate the processing of selected tables in Azure analysis service using ADF v2, Logic apps and Config file stored in BLOB.
 
-There is already sample avilable for [Azure analysis service Full Refresh using Logic apps](https://docs.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview) . Follow this example if you are doing full refresh.
+There is already sample avilable for [Azure analysis service Full Refresh using Logic apps](https://docs.microsoft.com/en-us/azure/analysis-services/analysis-services-refresh-logic-app) . Follow this example if you are doing full refresh.
 
 #### But, some customer dont want to process full AAS cube and want to process only few tables in Azure analysis service based on the config file .They can add remove tables to be processed from config file stored in Blob. this example will cover that part.
 
